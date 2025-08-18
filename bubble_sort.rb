@@ -1,18 +1,27 @@
 # Build a method #bubble_sort that takes an array and returns a sorted array. 
 
 def bubble_sort(array)
-    #sorted_array = []
-    (array[0]...array.length).each_with_index do |value, index|
-      current_value = array[index]
-      next_value = array[index+1]
-      if current_value > next_value
-        temp = next_value
-        array[index+1] = current_value
-        array[index] = temp
-      end
-  
-    end
-  print array
+  array_end = array.length - 1
+  p array_end
+  loop do
+    swapped = false
+    (0...array_end).each do |index|
+    p index 
+       if array[index] > array[index+1]
+        p "sucess! : #{array}"
+        temp = array[index]
+        array[index] = array[index+1]
+        array[index+1] = temp
+        swapped = true
+        p "changed to : #{array}"
+       end
+
+    end 
+
+    break unless swapped == false
+  end
+
+  p array
 end
 
 
